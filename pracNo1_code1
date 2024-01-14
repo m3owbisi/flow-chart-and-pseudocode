@@ -37,7 +37,7 @@ class Employee
         }
 };
 
-void main()
+int main()
 {
     Employee emp;
     emp.displayInfo();
