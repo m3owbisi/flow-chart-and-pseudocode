@@ -1,46 +1,46 @@
-#include<iostream.h>
-#include<stdio.h>
-#include<conio.h>
+#include <iostream.h>
+#include <stdio.h>
+#include <conio.h>
 
-class Student
+class MyClass
 {
     private:
-        char name[50];
-        int age;
-        double grade;
-
-        void getInfo()
-        {
-            clrscr();
-
-            cout << "Enter Student Name: ";
-            gets(name);
-
-            cout << "Enter Student Age: ";
-            cin >> age;
-
-            cout << "Enter Student Grade: ";
-            cin >> grade;
-        }
-
+        int privateVar;
+    
     public:
-        void displayInfo()
+        // Constructor
+        MyClass()
         {
-            getInfo();
-            clrscr();
-            cout << "\nEmployee Information:\n";
-            cout << "Name: " << name << endl;
-            cout << "Age: " << age << endl;
-            cout << "Grade: " << grade << endl;
-
-            getch();
+            privateVar=0;
         }
+        // Member function declaration
+        void setPrivateVar(int value);
+
+        void displayPrivateVar();
 };
 
-void main()
+// Member function definition outside the class
+void MyClass::setPrivateVar(int value)
 {
-    Student student;
-    student.displayInfo();
-    getch();
+    privateVar=value;
+}
+
+void MyClass::displayPrivateVar()
+{
+    clrscr();
+
+    cout << "Rishikesh" << endl;
+    cout << "Private Variable: " << privateVar << endl;
+}
+
+int main()
+{
+    // Create an instance of the MyClass
+    MyClass myObject;
+    // Access class members using member functions
+    myObject.setPrivateVar(42);
+    myObject.displayPrivateVar();
+
+    getch(); // Wait for a key press
     return(0);
 }
